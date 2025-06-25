@@ -68,3 +68,92 @@ Clean. Clear. No guesswork.
 
 
 
+🧱 List vs Tuple in Python
+
+🧠 Hey terminal analogy:
+Think of a list like a toolbox with adjustable slots – you can add or remove tools anytime.
+A tuple is like a sealed toolkit – fixed once packed, for efficiency and safety.
+
+🔧 When to use what?
+Use lists when you need to change, sort, or update the contents.
+
+Use tuples when you want to protect data and use them as dictionary keys or in sets.
+
+🧮 List Indexing in Python
+- - - fruits = ['apple', 'banana', 'cherry', 'mango']
+
+📦 Basic Indexing
+print(fruits[0]) #apple
+
+🔄 Negative Indexing
+print(fruits[-1])  # 'mango'
+
+🎯 Slicing 
+print(fruits[1:3])     # ['banana', 'cherry']
+
+More Methods: 
+ - - - > 🔧 .append() — Add one item to the end
+ fruits = ['apple', 'banana']
+fruits.append('cherry')
+print(fruits)  # ['apple', 'banana', 'cherry']
+
+ - - - > .extend() — Add multiple items
+ fruits = ['apple']
+fruits.extend(['banana', 'cherry'])
+print(fruits)  # ['apple', 'banana', 'cherry']
+
+**** append vs extend ****:
+
+append(['banana', 'cherry']) → adds a list as one element
+
+extend(['banana', 'cherry']) → adds each item separately 
+
+- - - > .insert(index, item) — Add at a specific position 
+fruits = ['apple', 'cherry']
+fruits.insert(1, 'banana')... the parameters are like this "Hey in this postion insert this"
+print(fruits)  # ['apple', 'banana', 'cherry']
+
+- - - > .remove(item) — Removes the first match
+fruits = ['apple', 'banana', 'apple']
+fruits.remove('apple')
+print(fruits)  # ['banana', 'apple']
+
+- - - > .pop(index=-1) — Removes and returns item (last by default)
+fruits = ['apple', 'banana']
+last = fruits.pop()
+print(last)    # 'banana'
+print(fruits)  # ['apple']
+
+- - - > .sort() and .reverse()
+nums = [3, 1, 2]
+nums.sort()
+print(nums)     # [1, 2, 3]
+
+nums.reverse()
+print(nums)     # [3, 2, 1]
+
+OR if you Want to sort in reverse directly? Use:
+    nums.sort(reverse=True)
+
+🧳 Tuple Packing : Packing means putting multiple values into a single tuple container
+                    person = ('Nebiyu', 21, 'Ethiopia')
+
+📤 Tuple Unpacking : Unpacking is the reverse — you take values out of a tuple and assign them to variables
+name, age, country = person
+print(name)     # 'Nebiyu'
+print(age)      # 21
+print(country)  # 'Ethiopia'
+
+Unpacking with *:
+
+ a, *b = (1, 2, 3, 4)
+print(a)  # 1
+print(b)  # [2, 3, 4] 
+
+OR 
+
+*a, b = (1, 2, 3, 4)
+print(a)  # [1, 2, 3]
+print(b)  # 4
+
+
