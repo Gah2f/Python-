@@ -156,4 +156,185 @@ OR
 print(a)  # [1, 2, 3]
 print(b)  # 4
 
+Dictionary and sets
 
+🧠 1. Dictionary (dict) : 
+A dictionary is a collection of key-value pairs. Think of it like a real dictionary:
+ you look up a word (key) to get its meaning (value).
+
+ person = {
+    "name": "Nebiyu",
+    "age": 22,
+    "university": "Howard"
+}
+
+📌 Key features:
+- Keys are unique and immutable (str, int, tuple, etc.)
+
+- Values can be any data type
+
+- Access by key, not index
+
+# Accessing values
+print(person["name"])         # Nebiyu
+
+# Adding a new key-value
+person["major"] = "Physics"
+
+# Updating
+person["age"] = 23
+
+# Deleting
+del person["university"]
+
+# Looping
+for key, value in person.items():
+    print(key, value)
+
+# Checking key
+if "name" in person:
+    print("Yes!")
+
+🧩 2. Set : 
+A set is an unordered collection of unique elements.
+
+my_set = {1, 2, 3, 4}
+
+📌 Key features:
+- No duplicate elements
+if 1 and true element in one set, then python treat it as duplicate and remove one and just say 1!
+- No indexing or slicing
+
+- Fast membership tests (in)
+
+- Useful for set 
+
+# Add element
+my_set.add(5)
+
+# Remove element
+my_set.remove(3)
+
+# Check membership
+if 2 in my_set:
+    print("Yes!")
+
+# Set operations
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a | b)  # Union -> {1, 2, 3, 4, 5}
+print(a & b)  # Intersection -> {3}
+print(a - b)  # Difference -> {1, 2}
+print(a ^ b)  # Symmetric diff -> {1, 2, 4, 5}
+
+Hey terminal, when you copy a dictionary in Python, you're either creating a shallow copy (same nested references) or a deep copy (fully independent clone). 
+Let’s break it down like debugging a file system:
+
+🧪 1. Simple (Shallow) Copy
+a. Using copy() method:
+original = {"name": "Nebiyu", "age": 22}
+copy_dict = original.copy()
+b. Using dict() constructor:
+copy_dict = dict(original)
+
+🧬 2. Deep Copy
+If the dictionary contains nested objects (like lists or other dicts), shallow copy won’t protect you: 
+
+import copy
+
+deep = copy.deepcopy(original)
+deep["grades"].append(50)
+print(original["grades"])  # Safe: [90, 85, 100]
+
+
+Hey terminal, time to loop through Python like a pro hacker! 🧠
+
+🔁 1. for Loop — The bread and butter
+Used when you know how many times you want to iterate or looping over collections.
+
+📦 Looping over a list:
+
+fruits = ["apple", "banana", "mango"]
+
+for fruit in fruits:
+    print(fruit)
+
+🔢 Loop with range():
+for i in range(5):  # 0 to 4
+    print(i)
+🧮 range(start, stop, step):
+for i in range(2, 10, 2):  # 2, 4,
+    print(i) 
+
+Take care: Python don't support java syntax like: 
+
+fot (int i=1; i<10; i++): 
+  NO NO NO NO NO NO , WON'T work!
+
+🔁 2. while Loop — Runs until condition is false
+Used when you don't know how many times to repeat in advance.
+
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+🛠️ Useful keywords: 
+
+| Keyword    | What it does                        |
+| ---------- | ----------------------------------- |
+| `break`    | Exit the loop immediately           |
+| `continue` | Skip current iteration              |
+| `else`     | Runs if loop ends **without break** |
+
+Think continue like this: 
+
+🎭 Analogy: "Security Guard at a Party"
+Imagine you're a security guard at a fancy party. Every guest comes in, and you scan their badge.
+
+If the guest is wearing a red badge 🔴 → they’re VIP, you let them in.
+
+If they’re wearing a yellow badge 🟡 → they’re suspicious, so you say:
+“Skip them and move to the next guest!” → That’s what continue does.
+
+guests = ["Alice🔴", "Bob🟡", "Charlie🔴", "Dave🟡"]
+
+for guest in guests:
+    if "🟡" in guest:
+        print(f"🚫 {guest} is suspicious. Skipping...")
+        continue
+    print(f"✅ {guest} enters the party!")
+
+✅ Alice🔴 enters the party!
+🚫 Bob🟡 is suspicious. Skipping...
+✅ Charlie🔴 enters the party!
+🚫 Dave🟡 is suspicious. Skipping...
+
+BASIC TAKE AWAY: 
+
+The main thing that classify to 'for' and 'while' is whether you know 
+its range or destiny! If you do go with 'for', if not 'while'
+will be your destiny!
+
+Python functions — your reusable code power-up!
+
+def greet():
+    print("Hello, Nebiyu!")
+greet()
+
+why def? 
+
+- Because def stands for “define”, and in Python, 
+it’s the keyword that tells the interpreter:
+“⚠️ Yo, I’m defining a function here!”
+
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # 8
+
+💡 return is the function saying:
+
+“Here’s the answer, you can use it later!”
