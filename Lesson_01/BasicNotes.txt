@@ -338,3 +338,88 @@ print(result)  # 8
 💡 return is the function saying:
 
 “Here’s the answer, you can use it later!”
+
+🧠 What is Recursion?
+
+Recursion is when a function calls itself to solve smaller parts of a problem.
+
+Think of it like a Russian nesting doll 🪆 — you open the big doll, and inside is a smaller doll, then a smaller one… until the tiniest one doesn’t open anymore. 
+That last one is the base case!
+
+def factorial(n):
+    if n == 1:  # base case
+        return 1
+    else:
+        return n * factorial(n - 1)  # recursive call
+🔍 How it works for factorial(4):
+factorial(4) → 4 * factorial(3)
+
+factorial(3) → 3 * factorial(2)
+
+factorial(2) → 2 * factorial(1)
+
+factorial(1) → 1 (base case) 
+
+factorial(2) = 2 * 1 = 2  
+factorial(3) = 3 * 2 = 6  
+factorial(4) = 4 * 6 = 24  
+So, factorial(4) = 24 
+
+🚨 Key Parts of Recursion
+
+Base Case: Stops the recursion.
+
+Recursive Call: Function calls itself with a smaller/simpler input.
+
+🗺️ What is Scope?
+
+Scope defines where in your code a variable can be accessed or modified.
+
+Think of it like a house 🏠:
+
+Each room can have its own TV 📺 (variable),
+
+But not every TV can be controlled from every room.
+
+🧭 4 Types of Python Scope (LEGB Rule): 
+1. Local (L)
+Inside a function — variables created here stay here.
+def greet():
+    name = "Nebiyu"  # local scope
+    print(name)
+2. Enclosing (E) 
+A function inside another function. 
+The inner function sees variables from the outer.
+def outer():
+    msg = "Hello"  # enclosing scope
+    def inner():
+        print(msg)
+    inner()
+3. Global (G)
+Defined outside any function. Can be accessed anywhere — 
+but not modified from inside without global.
+x = 10  # global
+
+def show():
+    print(x)
+4. Built-in (B)
+Predefined in Python like print(), len(), etc.
+
+🔐 Why Scope Matters: 
+
+Avoids variable name conflicts
+
+Keeps code clean and safe
+
+Prevents bugs from unexpected changes
+
+✋ Modifying Global Variables
+If you want to change a global variable inside a function, use global: 
+x = 5
+
+def update():
+    global x
+    x = 10
+
+update()
+print(x)  # 10
