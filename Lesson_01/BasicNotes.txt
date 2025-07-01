@@ -423,3 +423,72 @@ def update():
 
 update()
 print(x)  # 10
+
+🧠 What is a Closure?
+
+A closure is a function that remembers the variables from its enclosing scope, even after the outer function has finished executing.
+
+It happens when:
+
+You define a nested function inside another function.
+
+The nested function uses a variable from the outer function.
+
+The outer function returns the nested function.
+
+def outer(x):
+    def inner(y):
+        return x + y
+    return inner
+
+add_5 = outer(5)   # Now x = 5 is remembered
+print(add_5(3))    # Output: 8
+
+🔍 Why Use Closures?
+
+Data hiding (kind of like private variables).
+
+Creating function factories.
+
+Avoiding global variables.
+
+🔧 What is an f-string? "formatted" string.
+ An f-string is a string prefixed with f or F that 
+ lets you embed Python expressions directly using {}.
+
+ name = "Nebiyu"
+age = 20
+print(f"My name is {name} and I'm {age} years old.")
+
+Output: 
+My name is Nebiyu and I'm 20 years old.
+
+🧠 Why use f-strings?
+✅ Cleaner syntax than + or .format()
+
+✅ Supports expressions, not just variables
+
+✅ Faster than .format() in most cases
+
+🧩 What is a module?
+ A module is just a .py file that contains definitions and statements.
+
+For example, if you have a file called math_tools.py:
+# math_tools.py
+def add(a, b):
+    return a + b
+You can import and use it like this:
+import math_tools
+
+print(math_tools.add(3, 4))  # Output: 7
+
+📦 Types of Modules
+Built-in Modules (shipped with Python):
+import math
+print(math.sqrt(16))  # 4.0
+External Modules (you install with pip):
+
+🔌 Import Styles: 
+import math               # Import whole module
+from math import sqrt     # Import just one function
+import math as m          # Use alias
