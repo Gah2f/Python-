@@ -491,4 +491,25 @@ External Modules (you install with pip):
 🔌 Import Styles: 
 import math               # Import whole module
 from math import sqrt     # Import just one function
-import math as m          # Use alias
+import math as m          # Use alias 
+
+
+📦 What Are Command-Line Arguments? 
+They’re values you pass to a Python script when running it from the terminal.
+
+🛠 How to Use It in Python?
+Python has a built-in module called sys for this:
+
+import sys
+
+print("Script name:", sys.argv[0])
+print("Arguments:", sys.argv[1:]) 
+
+sys.argv is a list of strings:
+
+sys.argv[0] → the script name
+
+sys.argv[1:] → the actual arguments you passed
+
+🧾 Long story short:
+Use sys.argv to read arguments from the terminal. Want fancier handling? Use argparse.
