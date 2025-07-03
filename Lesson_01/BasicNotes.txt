@@ -618,3 +618,49 @@ Attributes = Brand, color, memory size
 
 ✅ Long story short:
 A class is a blueprint; an object is the actual thing built from it. Use classes to bundle data (attributes) and actions (methods) together in a clean and reusable way.
+
+       Inheritance and polymorphism
+
+🚸 INHERITANCE — "Like child inheriting traits from parent"
+class Vehicle:
+    def moves(self):
+        print("The vehicle moves on the road.")
+
+class Car(Vehicle):
+    def brand(self):
+        print("This car is a Toyota.")
+        my_car = Car()
+my_car.moves()
+my_car.brand()
+
+📌 Long story short (Inheritance):
+A child class (Car) inherits features from its parent class (Vehicle) but can also have its own features.
+
+🌀 POLYMORPHISM — "Same action, different behavior"
+class Vehicle:
+    def moves(self):
+        print("The vehicle moves.")
+
+class Car(Vehicle):
+    def moves(self):
+        print("The car drives on the road.")
+
+class Boat(Vehicle):
+    def moves(self):
+        print("The boat sails on water.")
+
+ def travel(vehicle):
+    vehicle.moves()
+
+travel(Car())
+travel(Boat())
+
+What will happen? 
+Depending on what kind of vehicle it is, it behaves differently:
+
+🚗 A Car says, “I drive on the road.”
+
+🚤 A Boat says, “I sail on water.” 
+
+📌 Long story short (Polymorphism):
+You can use the same method name (moves), but each class can customize how it behaves. This lets you write flexible, reusable code.
