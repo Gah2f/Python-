@@ -513,3 +513,108 @@ sys.argv[1:] → the actual arguments you passed
 
 🧾 Long story short:
 Use sys.argv to read arguments from the terminal. Want fancier handling? Use argparse.
+
+        lambda,lambda,lambda! 
+
+In Python, a lambda is a way to write small anonymous functions in a single line.
+
+syntax: lambda arguments: expression
+It’s the same as:
+
+def func(arguments):
+    return expression
+
+add = lambda x, y: x + y
+print(add(2, 3))  # Output: 5
+
+⚠️ Limitation:
+Only one expression is allowed. No statements.
+
+Not great for long logic. Better use def for clarity.
+
+📦 Long story short:
+lambda in Python creates quick, one-line anonymous functions, often used in sorting, filtering,
+or when you don’t need to reuse the function elsewhere.
+
+         Higher-Order Functions
+🔁 What is a Higher-Order Function?
+A higher-order function is any function that does at least one of the following:
+
+Takes another function as an argument
+
+Returns a function
+
+🧠 Why?
+They let you write flexible, reusable, and cleaner code—often used in functional programming (think map, filter, etc).
+
+def shout(text):
+    return text.upper()
+
+def whisper(text):
+    return text.lower()
+
+def greet(func):
+    return func("Hello!")
+
+print(greet(shout))   # Output: HELLO!
+print(greet(whisper)) # Output: hello!
+
+def multiplier(factor):
+    def multiply(x):
+        return x * factor
+    return multiply
+
+double = multiplier(2)
+print(double(5))  # Output: 10
+
+triple = multiplier(3)
+print(triple(5))  # Output: 15
+
+📌 Common Built-in Higher-Order Functions:
+map(func, iterable)
+
+filter(func, iterable)
+
+reduce(func, iterable) (from functools)
+
+sorted(iterable, key=func)
+
+✅ Long story short:
+A higher-order function is a function that accepts or returns another function, helping you write powerful and reusable code.
+
+          Classes and Objects
+
+🏗️ What is a Class?
+ A class is like a blueprint for creating objects. Think of it like a template.
+ 🚗 What is an Object?
+An object is a real thing made from that blueprint (the class).
+
+🧠 Why use classes?
+Organize code around real-world objects.
+
+Make reusable code.
+
+Encapsulate data and behavior together.
+
+🔑 Keywords to know:
+class: defines a class.
+
+object: an instance of a class.
+
+self: refers to the object itself.
+
+__init__: constructor.
+
+method: function inside class.
+
+🛠️ Real-life analogy:
+Class = "Phone design" 🛠️ (e.g., iPhone)
+
+Object = Actual phone in your hand 📱
+
+Methods = Features like call, text, take photo
+
+Attributes = Brand, color, memory size
+
+✅ Long story short:
+A class is a blueprint; an object is the actual thing built from it. Use classes to bundle data (attributes) and actions (methods) together in a clean and reusable way.
