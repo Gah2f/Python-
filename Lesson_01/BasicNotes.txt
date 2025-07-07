@@ -664,3 +664,71 @@ Depending on what kind of vehicle it is, it behaves differently:
 
 📌 Long story short (Polymorphism):
 You can use the same method name (moves), but each class can customize how it behaves. This lets you write flexible, reusable code.
+
+🔥 What are Errors and Exceptions?
+
+Errors are problems in a program that stop the execution.
+Exceptions are a specific type of error that can be handled.
+
+🛡️ Handling Exceptions with try and except
+
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+
+⚙️ Full Example
+
+    try:
+    number = int(input("Enter a number: "))
+    print(10 / number)
+except ValueError:
+    print("That's not a valid number!")
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+finally:
+    print("This runs no matter what.")
+
+✅ try: Code that might break
+
+✅ except: Catch and handle specific errors
+
+✅ finally: Always runs, used for cleanup (like closing a file)
+
+🧵 Long story short:
+Python errors come in two types: syntax errors (fix your code) and exceptions (can be caught and handled). 
+Use try-except blocks to avoid crashing your app, and use raise to manually alert problems when needed.
+
+Notice: in python you say raise error not throw like javascript! 
+
+
+🧪 What is a Virtual Environment?
+
+A virtual environment in Python is like having a clean, isolated workspace where you install only the packages you need — without messing up your system-wide Python.
+
+🧠 Analogy:
+Imagine you're a chef working in a shared kitchen. You don’t want your ingredients mixed with others. So, you bring your own mini kitchen (virtual environment) where you keep your ingredients (Python packages) separate from everyone else.
+
+💻 How to Use It:
+1. Create a virtual environment:
+python -m venv venv
+
+This will create a folder named venv containing your isolated Python environment.
+
+2. Activate it:
+venv\Scripts\activate 
+
+📦 What is PIP?
+
+PIP stands for Package Installer for Python. It helps you install, upgrade, and uninstall Python packages (like Django, Flask, NumPy).
+
+🧠 Analogy:
+Think of pip like an app store for Python — you type a command and it installs the tool/library you need in your virtual kitchen.
+
+Long story short:
+A virtual environment is your own sandbox to keep projects and their dependencies separate.
+
+PIP is your tool to install the packages you need inside that sandbox.
+
+Use this to find all packages: https://pypi.org
+
