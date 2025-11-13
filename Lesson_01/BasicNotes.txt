@@ -732,3 +732,9 @@ PIP is your tool to install the packages you need inside that sandbox.
 
 Use this to find all packages: https://pypi.org
 
+ File operations in Python:
+ RAWX = Read, Append, Write and Create
+ Example: 
+ file = open("example.txt", "r")  # Modes: "r", "w", "a", "x", "b", "t"
+
+Long story short: Python’s file operations use open() with different modes to read, write, or append to files. Use with open(...) for safe and clean file handling. You can also use os to manage files.
