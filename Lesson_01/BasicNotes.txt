@@ -618,3 +618,123 @@ Attributes = Brand, color, memory size
 
 ✅ Long story short:
 A class is a blueprint; an object is the actual thing built from it. Use classes to bundle data (attributes) and actions (methods) together in a clean and reusable way.
+
+       Inheritance and polymorphism
+
+🚸 INHERITANCE — "Like child inheriting traits from parent"
+class Vehicle:
+    def moves(self):
+        print("The vehicle moves on the road.")
+
+class Car(Vehicle):
+    def brand(self):
+        print("This car is a Toyota.")
+        my_car = Car()
+my_car.moves()
+my_car.brand()
+
+📌 Long story short (Inheritance):
+A child class (Car) inherits features from its parent class (Vehicle) but can also have its own features.
+
+🌀 POLYMORPHISM — "Same action, different behavior"
+class Vehicle:
+    def moves(self):
+        print("The vehicle moves.")
+
+class Car(Vehicle):
+    def moves(self):
+        print("The car drives on the road.")
+
+class Boat(Vehicle):
+    def moves(self):
+        print("The boat sails on water.")
+
+ def travel(vehicle):
+    vehicle.moves()
+
+travel(Car())
+travel(Boat())
+
+What will happen? 
+Depending on what kind of vehicle it is, it behaves differently:
+
+🚗 A Car says, “I drive on the road.”
+
+🚤 A Boat says, “I sail on water.” 
+
+📌 Long story short (Polymorphism):
+You can use the same method name (moves), but each class can customize how it behaves. This lets you write flexible, reusable code.
+
+🔥 What are Errors and Exceptions?
+
+Errors are problems in a program that stop the execution.
+Exceptions are a specific type of error that can be handled.
+
+🛡️ Handling Exceptions with try and except
+
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+
+⚙️ Full Example
+
+    try:
+    number = int(input("Enter a number: "))
+    print(10 / number)
+except ValueError:
+    print("That's not a valid number!")
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+finally:
+    print("This runs no matter what.")
+
+✅ try: Code that might break
+
+✅ except: Catch and handle specific errors
+
+✅ finally: Always runs, used for cleanup (like closing a file)
+
+🧵 Long story short:
+Python errors come in two types: syntax errors (fix your code) and exceptions (can be caught and handled). 
+Use try-except blocks to avoid crashing your app, and use raise to manually alert problems when needed.
+
+Notice: in python you say raise error not throw like javascript! 
+
+
+🧪 What is a Virtual Environment?
+
+A virtual environment in Python is like having a clean, isolated workspace where you install only the packages you need — without messing up your system-wide Python.
+
+🧠 Analogy:
+Imagine you're a chef working in a shared kitchen. You don’t want your ingredients mixed with others. So, you bring your own mini kitchen (virtual environment) where you keep your ingredients (Python packages) separate from everyone else.
+
+💻 How to Use It:
+1. Create a virtual environment:
+python -m venv venv
+
+This will create a folder named venv containing your isolated Python environment.
+
+2. Activate it:
+venv\Scripts\activate 
+
+📦 What is PIP?
+
+PIP stands for Package Installer for Python. It helps you install, upgrade, and uninstall Python packages (like Django, Flask, NumPy).
+
+🧠 Analogy:
+Think of pip like an app store for Python — you type a command and it installs the tool/library you need in your virtual kitchen.
+
+Long story short:
+A virtual environment is your own sandbox to keep projects and their dependencies separate.
+
+PIP is your tool to install the packages you need inside that sandbox.
+
+Use this to find all packages: https://pypi.org
+
+ File operations in Python:
+ RAWX = Read, Append, Write and Create
+ Example: 
+ file = open("example.txt", "r")  # Modes: "r", "w", "a", "x", "b", "t"
+
+Long story short: Python’s file operations use open() with different modes to read, write, or append to files. Use with open(...) for safe and clean file handling. You can also use os to manage files.
