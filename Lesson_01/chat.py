@@ -1,5 +1,5 @@
 from openai import OpenAI
-client = OpenAI() 
+client = OpenAI()
 
 Response = client.chat.completions.create(
     model="gpt-4",
